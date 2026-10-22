@@ -1,0 +1,169 @@
+:root {
+  color-scheme: light;
+  --tinta: #1a2332;
+  --papel: #f6f3ec;
+  --bosque: #14312e;
+  --marca: #0c5c56;
+  --marca-oscura: #08443f;
+  --oro: #f0d7a2;
+  --linea: #d9d1c3;
+  --alerta-fondo: #f8e6e1;
+  --alerta-texto: #7c2d22;
+  --alerta-borde: #a33b2b;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--tinta);
+  background: var(--bosque);
+  font-family: "Avenir Next", "Segoe UI", sans-serif;
+  line-height: 1.5;
+}
+
+h1, h2 {
+  font-family: Georgia, "Iowan Old Style", "Palatino Linotype", Palatino, serif;
+  font-weight: 600;
+  line-height: 1.15;
+}
+
+h1 {
+  margin: 0 0 1rem;
+  font-size: clamp(2.2rem, 5vw, 3.6rem);
+  overflow-wrap: anywhere;
+}
+
+h2 {
+  margin: 0 0 1rem;
+  font-size: 1.7rem;
+}
+
+p {
+  margin: 0 0 1rem;
+}
+
+a {
+  color: inherit;
+}
+
+.marco {
+  display: grid;
+  grid-template-columns: minmax(280px, 1.15fr) minmax(300px, 0.85fr);
+  min-height: 100vh;
+}
+
+.marco-simple {
+  grid-template-columns: 1fr;
+}
+
+.presentacion,
+.panel {
+  display: flex;
+  align-items: center;
+  padding: clamp(1.5rem, 5vw, 4.5rem);
+}
+
+.presentacion {
+  background: var(--bosque);
+  color: var(--papel);
+}
+
+.panel {
+  background: var(--papel);
+  color: var(--tinta);
+}
+
+.texto {
+  width: min(100%, 34rem);
+}
+
+.panel-contenido {
+  width: min(100%, 24rem);
+  margin-inline: auto;
+}
+
+.curso {
+  margin: 0 0 1rem;
+  color: var(--oro);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.alerta {
+  margin: 0 0 1rem;
+  padding: 0.75rem 0.9rem;
+  border-left: 4px solid var(--alerta-borde);
+  background: var(--alerta-fondo);
+  color: var(--alerta-texto);
+}
+
+form {
+  display: grid;
+  gap: 0.45rem;
+}
+
+label {
+  margin-top: 0.45rem;
+  font-size: 0.92rem;
+  font-weight: 700;
+}
+
+input {
+  width: 100%;
+  margin-bottom: 0.35rem;
+  padding: 0.8rem 0.9rem;
+  border: 1px solid var(--linea);
+  border-radius: 0;
+  background: #fff;
+  color: var(--tinta);
+  font: inherit;
+}
+
+button {
+  margin-top: 0.8rem;
+  padding: 0.85rem 1rem;
+  border: 0;
+  background: var(--marca);
+  color: #fff;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+button:hover {
+  background: var(--marca-oscura);
+}
+
+.enlace {
+  color: var(--oro);
+  font-weight: 700;
+}
+
+:focus {
+  outline: none;
+}
+
+:focus-visible {
+  outline: 3px solid var(--marca);
+  outline-offset: 2px;
+}
+
+.presentacion :focus-visible {
+  outline-color: var(--oro);
+}
+
+@media (max-width: 800px) {
+  .marco {
+    grid-template-columns: 1fr;
+  }
+
+  .presentacion {
+    min-height: 42vh;
+  }
+}
